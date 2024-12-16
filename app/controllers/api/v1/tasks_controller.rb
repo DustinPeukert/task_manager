@@ -11,6 +11,14 @@ class Api::V1::TasksController < ApplicationController
     render json: Task.create(task_params)
   end
 
+  def update
+    render json: Task.update(params[:id], task_params)
+  end
+
+  def destroy
+    render json: Task.delete(params[:id])
+  end
+
   private
 
   def task_params
